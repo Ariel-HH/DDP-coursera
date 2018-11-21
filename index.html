@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exploring Datasets</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Exploring Datasets">
+  <meta name="author" content="Ariel">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Exploring Datasets</h1>
+    <h2>Shiny app for coursera DDP Course Project</h2>
+    <p>Ariel<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="class1" id="slide-1" style="background:;">
+  <article data-timings="">
+    <style>
+      body{
+      background-color: rgb(100, 250, 180);
+      }
+      .class1{
+      background-color: rgb(100, 200, 100);
+      }
+      h1{
+      color:yellow;
+      }
+      #text{
+      color:yellow;
+      }
+      #note{
+      color:magenta;
+      }
+</style>
+
+<h2>Shiny app: &quot;Exploring Datasets&quot;</h2>
+
+<p><br>
+<br></p>
+
+<h1> Main purpose </h1> <br>
+<p id="text"> To make a very basic exploration of some R datasets.</p>
+<br>
+<br>
+<br>
+<h1> Links </h1>
+
+<p><a id="text" href="https://ariel-hh.shinyapps.io/exploring_datasets/">The app in Rstudio&#39;s servers.</a> <br>
+<a id="text" href="https://github.com/Ariel-HH/DDP-coursera">The app code in github.</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Select Dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br>
+<br></p>
+
+<p id="text"> You can select among the following datasets:</p>
+
+<p><br></p>
+
+<pre><code class="r">c(&quot;rock&quot;, &quot;pressure&quot;, &quot;cars&quot;, &quot;mtcars&quot;, &quot;iris&quot;)
+</code></pre>
+
+<pre><code>[1] &quot;rock&quot;     &quot;pressure&quot; &quot;cars&quot;     &quot;mtcars&quot;   &quot;iris&quot;    
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Select how many obs to see</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p id="text"> You can select how many obs to see. For example, the default values of the app will show the same 
+output as the following code:</p>
+
+<pre><code class="r">head(rock)
+</code></pre>
+
+<pre><code>  area    peri     shape perm
+1 4990 2791.90 0.0903296  6.3
+2 7002 3892.60 0.1486220  6.3
+3 7558 3930.66 0.1833120  6.3
+4 7352 3869.32 0.1170630  6.3
+5 7943 3948.54 0.1224170 17.1
+6 7979 4010.15 0.1670450 17.1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Select variable for histogram (and number of bins)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p id="text"> Finally, you can select a variable from the dataset to see a histogram, and determine the bins in the histogram. The default values in the app will show the same output as the following code:</p>
+
+<pre><code class="r">var &lt;- rock$area
+hist(var, breaks = seq(min(var), max(var), length.out = 20), 
+                 main =&quot;Histogram of area&quot;, col = &quot;blue&quot;)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+<p id="note"> <font size="-0,5"><strong>Note: This part (selecting the variable) is actually the motivation for the app, because it was far from obvious to me how to do it. Take into account that the options are available only after choosing the dataset.</strong></font></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Select Dataset'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Select how many obs to see'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Select variable for histogram (and number of bins)'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
